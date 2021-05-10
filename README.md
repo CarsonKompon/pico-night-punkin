@@ -2,7 +2,9 @@
 A Friday Night Funkin' Demake made in PICO-8 for Pico Day 2021
 
 Newgrounds: https://www.newgrounds.com/portal/view/791887
+
 Itch: https://carsonk.itch.io/pico-night-punkin
+
 Lexaloffle BBS: https://www.lexaloffle.com/bbs/?pid=91533
 
 # Modding Info
