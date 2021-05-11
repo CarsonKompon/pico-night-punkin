@@ -6,7 +6,7 @@ Newgrounds: https://www.newgrounds.com/portal/view/791887
 
 Itch: https://carsonk.itch.io/pico-night-punkin
 
-Lexaloffle BBS: https://www.lexaloffle.com/bbs/?pid=91533
+Lexaloffle BBS: https://www.lexaloffle.com/bbs/?tid=42715
 
 # Modding Info
 If you want to mod the game, it was made to be pretty straight forward. However, spritesheet editing/optimization will be a pain and require you to change a lot of hardcoded draw calls if you move things around.
@@ -78,4 +78,6 @@ Any other sprite assets are stored under `game_draw()`, with the exception of th
 # Made something cool? Post it to the BBS!
 If you've made a mod of Pico Night Punkin', post it!
 
-You can tweet us [@CarsonKompon](https://twitter.com/CarsonKompon) & [@blstrManx](https://twitter.com/blstrManx), or post it on the BBS under the Pico Night Punkin' forum post: https://www.lexaloffle.com/bbs/?pid=91533#p
+Tweet us [@CarsonKompon](https://twitter.com/CarsonKompon) & [@blstrManx](https://twitter.com/blstrManx)
+
+And post it to the BBS under the Pico Night Punkin' forum post: https://www.lexaloffle.com/bbs/?tid=42715
