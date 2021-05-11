@@ -1,5 +1,6 @@
 # Pico Night Punkin'
 A Friday Night Funkin' Demake made in PICO-8 for Pico Day 2021
+By [Carson Kompon](https://twitter.com/CarsonKompon) and [Chris West](https://twitter.com/blstrManx)
 
 Newgrounds: https://www.newgrounds.com/portal/view/791887
 
@@ -77,4 +78,4 @@ Any other sprite assets are stored under `game_draw()`, with the exception of th
 # Made something cool? Post it to the BBS!
 If you've made a mod of Pico Night Punkin', post it!
 
-You can tweet me [@CarsonKompon](https://twitter.com/CarsonKompon), or post it on the BBS under the Pico Night Punkin' forum post: https://www.lexaloffle.com/bbs/?pid=91533#p
+You can tweet us [@CarsonKompon](https://twitter.com/CarsonKompon) & [@blstrManx](https://twitter.com/blstrManx), or post it on the BBS under the Pico Night Punkin' forum post: https://www.lexaloffle.com/bbs/?pid=91533#p
