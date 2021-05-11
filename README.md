@@ -1,6 +1,6 @@
 # Pico Night Punkin'
 A Friday Night Funkin' Demake made in PICO-8 for Pico Day 2021
-By [Carson Kompon](https://twitter.com/CarsonKompon) and [Chris West](https://twitter.com/blstrManx)
+by [Carson Kompon](https://twitter.com/CarsonKompon) and [Chris West](https://twitter.com/blstrManx)
 
 Newgrounds: https://www.newgrounds.com/portal/view/791887
 
