@@ -225,6 +225,12 @@ function game_draw()
 	pset(_lx+48,_ly+6,7)
 	pset(_lx+11,_ly+24,7)
 	pset(_lx+25,_ly+32,7)
+	pset(_lx+64,_ly+28,7)
+	pset(_lx+78,_ly+24,7)
+	pset(_lx+90,_ly+32,7)
+	pset(_lx+106,_ly+21,7)
+	pset(_lx+110,_ly+8,7)
+	pset(_lx+120,_ly+27,7)
 	--pset(
 	--buildings
 	rectfill(lx-12-6,ly+70,lx+42-6,ly+128,0)
