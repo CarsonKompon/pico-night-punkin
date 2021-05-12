@@ -16,8 +16,6 @@ function _init()
 	music(0)
 	synctime = 509
 	dset(60,0)
-	dset(55,0)
-	dset(50,0)
 	if(flr(rnd(100)) == 0) logo = 2
 end
 

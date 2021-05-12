@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 30
+version 32
 __lua__
 --week 7 source code
 --top secret hush hush
@@ -980,16 +980,31 @@ function chars_draw()
 	--girlfriend
 	palt(0,false)
 	palt(10,true)
-	local lx = camx/2
-	local ly = camy/2
-	if flr(step/(synctime/8)) % 2 == 1 then
-		sspr(115,18,13,14,lx+2+chars[3].x-16-12,ly+chars[3].y+12, 12, 14, true)
-		sspr(115,18,13,14,lx-1+chars[3].x+16,ly+chars[3].y+12)
-		sspr(85,0,29,47,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2))
+	local lx = camx/4
+	local ly = 0
+	if flr(step/(synctime/16)) % 2 == 0 then
+		sspr(85,36,30,11,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22+13)
+		sspr(115,18,13,15,lx+2+chars[3].x-16-12-1,ly+chars[3].y+12, 13, 15, true)
+		sspr(115,18,13,15,lx-1+chars[3].x+16,ly+chars[3].y+12)
+		--sspr(104,57,24,23,lx+chars[3].x-flr(29/2)+4,ly+chars[3].y+4-flr(47/2)-1)
 	else
-		sspr(115,33,13,14,lx-1+chars[3].x+16,ly+chars[3].y+12)
-		sspr(115,33,13,14,lx+2+chars[3].x-16-12,ly+chars[3].y+12, 12, 14, true)
-		sspr(55,0,29,46,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(46/2))
+		sspr(55,35,30,11,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22+13)
+		sspr(115,33,12,15,lx-1+chars[3].x+16,ly+chars[3].y+12)
+		sspr(115,33,12,15,lx+2+chars[3].x-16-12,ly+chars[3].y+12, 12, 15, true)
+		--sspr(98,80,30,22,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(46/2))
+	end
+	if flr(step/(synctime/16)) % 4 == 0 then
+		sspr(55,22,30,13,lx+chars[3].x-flr(29/2)-1,ly+chars[3].y+4-flr(47/2)+22,32,14)
+		sspr(90,0,24,23,lx+chars[3].x-flr(29/2)+4,ly+chars[3].y+4-flr(47/2),26,22)
+	elseif flr(step/(synctime/16)) % 4 == 1 then
+		sspr(55,22,30,13,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22)
+		sspr(90,0,24,23,lx+chars[3].x-flr(29/2)+4,ly+chars[3].y+4-flr(47/2)-1)
+	elseif flr(step/(synctime/16)) % 4 == 2 then
+		sspr(55,22,30,13,lx+chars[3].x-flr(29/2)-1,ly+chars[3].y+4-flr(47/2)+22,32,14)
+		sspr(55,0,30,22,lx+chars[3].x-flr(29/2)-2,ly+chars[3].y+4-flr(46/2)+1,32,21)
+	elseif flr(step/(synctime/16)) % 4 == 3 then
+		sspr(55,22,30,13,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22,30,13)
+		sspr(55,0,30,22,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(46/2))
 	end
 	pal()
 	

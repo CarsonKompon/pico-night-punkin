@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 30
+version 32
 __lua__
 --week 7 source code
 --top secret hush hush
@@ -975,18 +975,30 @@ function chars_draw()
 	palt(10,true)
 	local lx = camx/4
 	local ly = 0
-	sspr(98,103,30,13,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22)
-	if flr(step/(synctime/8)) % 2 == 1 then
+	if flr(step/(synctime/16)) % 2 == 0 then
 		sspr(98,117,15,11,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22+13)
 		sspr(98,117,15,11,lx-1+15+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22+13,15,11,true)
 		sspr(55,0,13,15,lx+2+chars[3].x-16-12-1,ly+chars[3].y+12, 13, 15, true)
 		sspr(55,0,13,15,lx-1+chars[3].x+16,ly+chars[3].y+12)
-		sspr(104,57,24,23,lx+chars[3].x-flr(29/2)+4,ly+chars[3].y+4-flr(47/2)-1)
+		--sspr(104,57,24,23,lx+chars[3].x-flr(29/2)+4,ly+chars[3].y+4-flr(47/2)-1)
 	else
 		sspr(113,117,15,11,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22+13,15,11,true)
 		sspr(113,117,15,11,lx-1+15+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22+13)
 		sspr(68,0,12,15,lx-1+chars[3].x+16,ly+chars[3].y+12)
 		sspr(68,0,12,15,lx+2+chars[3].x-16-12,ly+chars[3].y+12, 12, 15, true)
+		--sspr(98,80,30,22,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(46/2))
+	end
+	if flr(step/(synctime/16)) % 4 == 0 then
+		sspr(98,103,30,13,lx+chars[3].x-flr(29/2)-1,ly+chars[3].y+4-flr(47/2)+22,32,14)
+		sspr(104,57,24,23,lx+chars[3].x-flr(29/2)+4,ly+chars[3].y+4-flr(47/2),26,22)
+	elseif flr(step/(synctime/16)) % 4 == 1 then
+		sspr(98,103,30,13,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22)
+		sspr(104,57,24,23,lx+chars[3].x-flr(29/2)+4,ly+chars[3].y+4-flr(47/2)-1)
+	elseif flr(step/(synctime/16)) % 4 == 2 then
+		sspr(98,103,30,13,lx+chars[3].x-flr(29/2)-1,ly+chars[3].y+4-flr(47/2)+22,32,14)
+		sspr(98,80,30,22,lx+chars[3].x-flr(29/2)-2,ly+chars[3].y+4-flr(46/2)+1,32,21)
+	elseif flr(step/(synctime/16)) % 4 == 3 then
+		sspr(98,103,30,13,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(47/2)+22,30,13)
 		sspr(98,80,30,22,lx+chars[3].x-flr(29/2),ly+chars[3].y+4-flr(46/2))
 	end
 	pal()
