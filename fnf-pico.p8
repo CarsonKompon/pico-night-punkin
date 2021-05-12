@@ -73,6 +73,9 @@ function game_init()
 	maxhp = 500
 	press = {false,false,false,false}
 	currentpattern=-1
+	--this is for the windows in the bg
+	windowpulse = 15
+	windowcol = 0
 	
 	leftmap = {}
 	rightmap = {}
@@ -102,6 +105,13 @@ function game_update()
 	if stat(24) ~= currentpattern then
 		currentpattern = stat(24)
 		step = ((((32*currentpattern)+1)/32)*(synctime/2))
+	end
+	
+	--this is for the windows in the bg
+	if(windowpulse < 15) windowpulse += 0.25
+	if windowpulse == 15 and flr(step/(synctime/8)) % 2 == 0 then
+		windowpulse = 0
+		windowcol = choose({9,10,8,11,12,7,14})
 	end
 	
 	--save seed to clipboard
@@ -190,19 +200,80 @@ end
 function game_draw()
 	cls(1)
 	pal()
+	
+	--background
 	local lx = camx/2
 	local ly = camy/2
 	local llx = flr(camx/2)
 	local lly = flr(camy/2)
-	--sun
-	circfill(92,14,5,9)
+	local _lx = camx-flr(camx/8)
+	local _ly = camy-flr(camy/4)
+	--moon
+	circfill(_lx+92,_ly+14,5,15)
 	fillp(▒)
-	circfill(92,14,8,9)
+	circfill(_lx+92,_ly+14,8,15)
 	--gradient
 	fillp(▤)-- ▤ <- y | b -> ▒
 	circfill(lx+63,ly+960+8,920,2)
 	fillp(█)
 	circfill(lx+63,ly+960+48,940,2)
+	--stars
+	pset(_lx+2,_ly+8,7)
+	pset(_lx+8,_ly+4,7)
+	pset(_lx+23,_ly+12,7)
+	pset(_lx+27,_ly+8,7)
+	pset(_lx+48,_ly+6,7)
+	pset(_lx+11,_ly+24,7)
+	pset(_lx+25,_ly+32,7)
+	--pset(
+	--buildings
+	rectfill(lx-12-6,ly+70,lx+42-6,ly+128,0)
+	rectfill(lx-12-6,ly+46,lx+8-6,ly+70,0)
+	rectfill(lx+8-6,ly+64,lx+24-6,ly+70,0)
+	rectfill(lx+24-6,ly+52,lx+42-6,ly+70,0)
+	rectfill(lx+22,ly+48,lx+23,ly+52,0)
+	rectfill(lx+22-2,ly+47,lx+23+2,ly+48,0)
+	rectfill(lx+46-6,ly+40,lx+72-6,ly+128,0)
+	rectfill(lx+46+4-6,ly+34,lx+72-4-6,ly+40,0)
+	rectfill(lx+72,ly+70,lx+82,ly+128,0)
+	rectfill(lx+82,ly+46,lx+100,ly+128,0)
+	rectfill(lx+82-2,ly+44,lx+100+2,ly+46,0)
+	rectfill(lx+96,ly+36,lx+97,ly+44,0)
+	rectfill(lx+95,ly+35,lx+98,ly+37,0)
+	rectfill(lx+100,ly+62,lx+114,ly+128,0)
+	rectfill(lx+120,ly+68,lx+128,ly+128,0)
+	rectfill(lx+128,ly+42,lx+140,ly+128,0)
+	--windows
+	fade(flr(windowpulse))
+	color(windowcol)
+	if(windowcol ~= 14)rectfill(lx-9,ly+48,lx-6,ly+52)
+	if(windowcol ~= 11)rectfill(lx-3,ly+48,lx+0,ly+52)
+	if(windowcol ~= 7)rectfill(lx-9,ly+60,lx-6,ly+64)
+	if(windowcol ~= 9)rectfill(lx-3,ly+54,lx+0,ly+58)
+	if(windowcol ~= 11)rectfill(lx-3,ly+66,lx+0,ly+70)
+	if(windowcol ~= 9)rectfill(lx+21,ly+54,lx+24,ly+60)
+	if(windowcol ~= 12)rectfill(lx+26,ly+54,lx+29,ly+60)
+	if(windowcol ~= 8)rectfill(lx+31,ly+54,lx+34,ly+60)
+	if(windowcol ~= 11)rectfill(lx+21,ly+62,lx+24,ly+68)
+	if(windowcol ~= 14)rectfill(lx+26,ly+62,lx+29,ly+68)
+	if(windowcol ~= 7)rectfill(lx+31,ly+62,lx+34,ly+68)
+	if(windowcol ~= 10)rectfill(lx+48,ly+38,lx+50,ly+44)
+	if(windowcol ~= 12)rectfill(lx+56,ly+42,lx+58,ly+44)
+	if(windowcol ~= 7)rectfill(lx+56,ly+50,lx+58,ly+54)
+	if(windowcol ~= 11)rectfill(lx+52,ly+50,lx+54,ly+54)
+	if(windowcol ~= 9)rectfill(lx+48,ly+60,lx+50,ly+66)
+	if(windowcol ~= 11)rectfill(lx+56,ly+64,lx+58,ly+66)
+	if(windowcol ~= 8)rectfill(lx+52,ly+70,lx+54,ly+72)
+	if(windowcol ~= 12)rectfill(lx+85,ly+48,lx+87,ly+50)
+	if(windowcol ~= 14)rectfill(lx+89,ly+48,lx+91,ly+50)
+	if(windowcol ~= 10)rectfill(lx+93,ly+52,lx+95,ly+54)
+	if(windowcol ~= 7)rectfill(lx+89,ly+56,lx+91,ly+58)
+	if(windowcol ~= 12)rectfill(lx+111,ly+68,lx+112,ly+70)
+	if(windowcol ~= 10)rectfill(lx+108,ly+68,lx+109,ly+70)
+	if(windowcol ~= 8)rectfill(lx+130,ly+45,lx+132,ly+49)
+	if(windowcol ~= 12)rectfill(lx+134,ly+45,lx+136,ly+49)
+	if(windowcol ~= 9)rectfill(lx+134,ly+57,lx+136,ly+61)
+	pal()
 	--ground
 	circfill(lx+63,ly+481,400,13)
 	fillp(▒)
@@ -216,12 +287,12 @@ function game_draw()
 	--print(score,0, 8)
 	--print(step-laststep,32,0)
 	
-	
 	if hp > 0 then
+		--charcters
 		chars_draw()
 		local _nh = 128-noteheight
 		
-		--left side
+		--left side arrow buttons
 		if downscroll == 0 then
 			sspr(56,46,11,12,camx+4+(14*0),camy+_nh,11,12,true)
 			sspr(67,46,12,11,camx+4+(14*1),camy+_nh,12,11,false,true)
@@ -234,7 +305,7 @@ function game_draw()
 			sspr(56,46,11,12,camx+4+(14*3),camy+128-12-_nh,11,12)
 		end
 		
-		--right side
+		--right side arrow buttons
 		if downscroll == 0 then
 			if(press[1]) arrow_color(0)
 			sspr(56,46,11,12,camx+113-14*3,camy+_nh,11,12,true)
