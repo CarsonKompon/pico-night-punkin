@@ -9,7 +9,7 @@ Itch: https://carsonk.itch.io/pico-night-punkin
 Lexaloffle BBS: https://www.lexaloffle.com/bbs/?tid=42715
 
 # Modding Info
-If you want to mod the game, it was made to be pretty straight forward. However, spritesheet editing/optimization will be a pain and require you to change a lot of hardcoded draw calls if you move things around.
+If you want to mod the game, it was made to be pretty straight forward. However, spritesheet editing/optimization will be a pain and require you to change a lot of hardcoded draw calls if you move things around. (Obviously PICO-8 is required and so is basic knowledge of it & LUA)
  
  Here's a brief run-down of each cart:
 - fnf-menu is the primary cart, this is where the game starts, and only contains the splash text/title screen
