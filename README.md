@@ -76,6 +76,12 @@ Girlfriends' are also stored in `char_update()` and `char_draw()` under the line
 
 Any other sprite assets are stored under `game_draw()`, with the exception of the game's arrows being under `arrows_draw()` and `arrows_draw_downscroll()`
 
+# Useful Tools
+
+**[`#PNP_CHARTER`](https://www.lexaloffle.com/bbs/?pid=95597#p)** - A charting tool that generates `map_add` functions for both my engine aswell as [jo560hs](https://www.lexaloffle.com/bbs/?uid=45958)'s engine.
+
+**[`#PNP_COMPRESS`](https://www.lexaloffle.com/bbs/?pid=95794#p)** - A tool that compresses large beatmaps so they don't take up as many tokens, however this can increase the character count.
+
 # Made something cool? Post it to the BBS!
 If you've made a mod of Pico Night Punkin', post it!
 
