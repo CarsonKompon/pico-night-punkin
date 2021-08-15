@@ -79,9 +79,11 @@ Any other sprite assets are stored under `game_draw()`, with the exception of th
 
 # Useful Tools
 
+There are all pico-8 carts that have been made to assist you in developing your mod!
+
 **[`#PNP_CHARTER`](https://www.lexaloffle.com/bbs/?pid=95597#p)** - A charting tool that generates `map_add` functions for both my engine aswell as [jo560hs](https://www.lexaloffle.com/bbs/?uid=45958)'s engine.
 
-8**[`#IMPROVECHARTER`](https://www.lexaloffle.com/bbs/?pid=96077#p)** - A modification of [jo560hs](https://www.lexaloffle.com/bbs/?uid=45958)'s charter that adds some additional ui elements and adds support for [evman2k](https://www.lexaloffle.com/bbs/?uid=43807)'s engine aswell as "ugh" style notes for this engine.
+**[`#IMPROVECHARTER`](https://www.lexaloffle.com/bbs/?pid=96077#p)** - A modification of [jo560hs](https://www.lexaloffle.com/bbs/?uid=45958)'s charter that adds some additional ui elements and adds support for [evman2k](https://www.lexaloffle.com/bbs/?uid=43807)'s engine aswell as "ugh" style notes for this engine.
 
 **[`#PNP_COMPRESS`](https://www.lexaloffle.com/bbs/?pid=95794#p)** - A tool that compresses large beatmaps so they don't take up as many tokens, however this can increase the character count.
 
