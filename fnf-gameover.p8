@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 32
+version 33
 __lua__
 --fnf gameover
 
@@ -28,6 +28,8 @@ function back_to_game()
 		load("fnf-roses.p8")
 	elseif songid == 5 then
 		load("fnf-ugh.p8")
+		elseif songid == 6 then
+		load("fnf-halloween.p8")
 	else
 		load("fnf-select.p8")
 	end

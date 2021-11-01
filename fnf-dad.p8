@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 32
+version 33
 __lua__
 --week 7 source code
 --top secret hush hush
@@ -651,6 +651,8 @@ function arrows_update()
 				hashit=true
 				poke(0x5f43)
 				
+				if(difficulty==3) corrupt()
+				
 				--animate char
 				char_animate(2,_a.dir,true)
 				
@@ -1077,6 +1079,23 @@ function popups_draw()
 		print(_p.txt,lx+_p.x-#(_p.txt)*2,ly+_p.y,7)
 		fillp(█)
 	end
+end
+-->8
+function corrupt()
+	--sprite corruption
+	for i=1,10 do
+		poke(rnd(0x1fff),rnd(255))
+	end
+	
+	--music/sound corruption
+	if(flr(rnd(25))==1) poke(0x5f40+rnd(3),rnd(255))
+	for i=1,5 do
+		poke(rnd(0x42ff-0x3200)+0x3200,rnd(255))
+	end
+	
+	--chance to flip/turn screen
+	if(flr(rnd(1000))==0) poke(0x5f2c,rnd({0,129,130,131,133,134,135}))
+	
 end
 __gfx__
 33333333333333222222233333333333333333322222222233333330001111aaaaaa000111aaaaaabbbbbbbbbbbbb00bbb00bbbbbbbbbbbbbbb0000005500000
