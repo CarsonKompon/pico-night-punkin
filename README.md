@@ -56,6 +56,9 @@ In this example, each note is separated with a `:`, and each note is formatted b
  
 A note can optionally be formatted as `offset,note,length` with `length` being how long the note's trail is in notes (default is 0).
 
+**UPDATE: YOU CAN NOW GENERATE `_notes` STRINGS UP TO A LENGTH OF 32 WITH [#PNP_CHARTER](https://www.lexaloffle.com/bbs/?pid=95597#p)**
+(There's also [#IMPROVECHARTER](https://www.lexaloffle.com/bbs/?pid=96077#p) which is a mod of #PNP_CHARTER with some more ui elements and additional support)
+
 Once you've created your chart, you can change the note jump speed in the `arrows_init()` function in tab 3 of the code editor. `NOTETIME` is equal to the amount of frames a note is on screen for before it can be hit. If you change this value, you might have to also edit `arrows_draw()` and `arrows_draw_downscroll()` so that the length of the note trails are in-line with the new speed. (CTRL+F `(_T.LEN*12)` and increase `12` if you've increased `NOTETIME`, or lower it if you've lowered `NOTETIME` until it looks just right)
 
 **NOTE: If your chart has both characters singing at the same time**, you'll have to edit below line 98, `--center camera on duet`
@@ -73,6 +76,16 @@ I won't go into too much detail here, as it's very messy, but characters are dra
 Girlfriends' are also stored in `char_update()` and `char_draw()` under the lines `--girlfriend`.
 
 Any other sprite assets are stored under `game_draw()`, with the exception of the game's arrows being under `arrows_draw()` and `arrows_draw_downscroll()`
+
+# Useful Tools
+
+There are all pico-8 carts that have been made to assist you in developing your mod!
+
+**[`#PNP_CHARTER`](https://www.lexaloffle.com/bbs/?pid=95597#p)** - A charting tool that generates `map_add` functions for both my engine aswell as [jo560hs](https://www.lexaloffle.com/bbs/?uid=45958)'s engine.
+
+**[`#IMPROVECHARTER`](https://www.lexaloffle.com/bbs/?pid=96077#p)** - A modification of [jo560hs](https://www.lexaloffle.com/bbs/?uid=45958)'s charter that adds some additional ui elements and adds support for [evman2k](https://www.lexaloffle.com/bbs/?uid=43807)'s engine aswell as "ugh" style notes for this engine.
+
+**[`#PNP_COMPRESS`](https://www.lexaloffle.com/bbs/?pid=95794#p)** - A tool that compresses large beatmaps so they don't take up as many tokens, however this can increase the character count.
 
 # Made something cool? Post it to the BBS!
 If you've made a mod of Pico Night Punkin', post it!
