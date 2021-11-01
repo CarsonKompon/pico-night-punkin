@@ -214,11 +214,11 @@ function menu_draw()
 		draw_spookeez(12,36)
 	elseif state == 3 then
 		draw_pico(10,48-3)
-	elseif state == 3 then
-		draw_milf(16,26)
 	elseif state == 4 then
-		draw_senpai(16,43)
+		draw_milf(16,26)
 	elseif state == 5 then
+		draw_senpai(16,43)
+	elseif state == 6 then
 		draw_tankman(12,44-3)
 	end
 	

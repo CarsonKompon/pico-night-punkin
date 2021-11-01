@@ -662,6 +662,8 @@ function arrows_update()
 				hashit=true
 				poke(0x5f43)
 				
+				if(difficulty==3) corrupt()
+				
 				--animate char
 				char_animate(2,_a.dir,true)
 				
@@ -1069,6 +1071,23 @@ function popups_draw()
 		print(_p.txt,lx+_p.x-#(_p.txt)*2,ly+_p.y,7)
 		fillp(█)
 	end
+end
+-->8
+function corrupt()
+	--sprite corruption
+	for i=1,10 do
+		poke(rnd(0x1fff),rnd(255))
+	end
+	
+	--music/sound corruption
+	if(flr(rnd(25))==1) poke(0x5f40+rnd(3),rnd(255))
+	for i=1,5 do
+		poke(rnd(0x42ff-0x3200)+0x3200,rnd(255))
+	end
+	
+	--chance to flip/turn screen
+	if(flr(rnd(1000))==0) poke(0x5f2c,rnd({0,129,130,131,133,134,135}))
+	
 end
 __gfx__
 3333333333333322222223333333333333333332222222223333333aaaaaaaaaaaa2222aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa22aaaaaaaaaaabbb1111bbbbbb
