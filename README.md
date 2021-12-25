@@ -67,7 +67,7 @@ Change the 64 in `_duetlength` to the length of your duet in beats.
 If you have multiple duets in your chart, you can duplicate lines 99-103 and repeat to make as many as you want.
 
 # Modifying the Spritesheet
-I won't go into too much detail here, as it's very messy, but characters are drawn in tab 5 of the code editor.
+I won't go into too much detail here, as it's very messy, but characters are drawn in tab 5 of the code editor. Not all carts are the same, so the following information may be inaccurate if you aren't using `fnf-pico.p8` as a base.
 
 `char_animate()` includes the x,y,width,height of the sprite on the spritesheet for each direction. With 0 being the left character, 1 being the right. And the directions being 0,1,2,3 - left,down,up,right.
 
@@ -75,7 +75,9 @@ I won't go into too much detail here, as it's very messy, but characters are dra
 
 Girlfriends' are also stored in `char_update()` and `char_draw()` under the lines `--girlfriend`.
 
-Any other sprite assets are stored under `game_draw()`, with the exception of the game's arrows being under `arrows_draw()` and `arrows_draw_downscroll()`
+Any other sprite assets are stored under `game_draw()`, with the exception of the game's arrows being under `arrows_draw()` and `arrows_draw_downscroll()`'
+
+If you wanna get funky and include sprites outside of your spritesheet, you're going to have to use `fnf-sprite-cruncher.p8` to convert your sprites to a string. I recommend using `fnf-xmas.p8` as a base and using `draw_sheet(index, x, y, background_colour)` to draw the sheet at `index` in array `sheets`.
 
 # Useful Tools
 
