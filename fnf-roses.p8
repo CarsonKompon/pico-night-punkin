@@ -1,10 +1,11 @@
 pico-8 cartridge // http://www.pico-8.com
-version 33
+version 34
 __lua__
 --week 7 source code
 --top secret hush hush
 
 function _init()
+	poke(0x5f2d,1)
 	seed = flr(rnd(8000))*4
 	baseseed = seed
 	songid = 4
@@ -174,10 +175,10 @@ end
 function get_inputs()
 	lastpress = {press[1],press[2],press[3],press[4]}
 	press = {false,false,false,false}
-	if(btn(⬅️) or btn(⬅️,1)) press[1] = true
-	if(btn(⬇️) or btn(⬇️,1)) press[2] = true
-	if(btn(⬆️) or btn(⬆️,1) or btn(🅾️)) press[3] = true
-	if(btn(➡️) or btn(➡️,1) or btn(❎)) press[4] = true
+	if(btn(⬅️) or stat(28,7)) press[1] = true
+	if(btn(⬇️) or stat(28,9)) press[2] = true
+	if(btn(⬆️) or stat(28,13) or btn(❎)) press[3] = true
+	if(btn(➡️) or stat(28,14) or btn(🅾️)) press[4] = true
 end
 
 function game_draw()

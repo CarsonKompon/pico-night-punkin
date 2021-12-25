@@ -1,9 +1,10 @@
 pico-8 cartridge // http://www.pico-8.com
-version 33
+version 34
 __lua__
 --fnf gameover
 
 function _init()
+	poke(0x5f2d,1)
 	cartdata("ckcw_fnfp8")
 	songid = dget(61)
 	secret = false
@@ -28,8 +29,10 @@ function back_to_game()
 		load("fnf-roses.p8")
 	elseif songid == 5 then
 		load("fnf-ugh.p8")
-		elseif songid == 6 then
+	elseif songid == 6 then
 		load("fnf-halloween.p8")
+	elseif songid == 7 then
+		load("fnf-xmas.p8")
 	else
 		load("fnf-select.p8")
 	end
