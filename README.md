@@ -36,7 +36,7 @@ When creating your song, start on Pattern 0, and try to leave at least 1 pattern
 # Creating a Custom Chart
 Once you've created your Custom Song, you're now going to need to edit some of the code to make the game run in-time with your song. To do this, we'll have to modify the `SYNCTIME` variable at the bottom of the `_INIT()` function.
 
-`SYNCTIME` should be equal to `(The SPD of your music patterns) * 3.18`
+`SYNCTIME` should be equal to `(The SPD of your music patterns) * 31.8`
 
 Now, to start creating the Chart, go to tab 2 in the code editor, and delete everything from inside of `init_beatmap()` and `init_beatmap_hard()` except for the `MUSIC(0)` line at the bottom.
 
