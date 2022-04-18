@@ -3,6 +3,7 @@ version 34
 __lua__
 --friday night funkin' in pico-8
 --made by carson k and chris w
+--test
 
 function _init()
 	poke(0x5f2d,1)
